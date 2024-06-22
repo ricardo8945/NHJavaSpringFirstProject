@@ -66,4 +66,10 @@ public class VentaService {
         ventaRepository.delete(ventaEntity);
         return modelMapper.map(ventaEntity,VentaDTO.class);
     }
+
+    public VentaDTO getDireccion(Integer idVenta){
+        String direccion = ventaRepository.getDireccion(idVenta);
+        return VentaDTO.builder().direccion(direccion).build();
+    }
+
 }
