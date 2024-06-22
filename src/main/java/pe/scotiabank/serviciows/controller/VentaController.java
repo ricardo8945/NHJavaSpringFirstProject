@@ -49,4 +49,9 @@ public class VentaController {
     public ResponseEntity<VentaDTO> deleteVenta(@PathVariable Integer idVenta){
         return new ResponseEntity<>(ventaService.deleteVenta(idVenta), HttpStatus.ACCEPTED);
     }
+
+    @GetMapping("/{idVenta}")
+    public ResponseEntity<VentaDTO> getDireccionVenta(@PathVariable Integer idVenta){
+        return new ResponseEntity<>(ventaService.getDireccion(idVenta), HttpStatus.ACCEPTED);
+    }
 }
